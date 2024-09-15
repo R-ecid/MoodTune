@@ -1,5 +1,5 @@
 // src/components/Callback.js
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Callback = ({ onReceiveToken }) => {
@@ -8,7 +8,6 @@ const Callback = ({ onReceiveToken }) => {
   useEffect(() => {
     const hash = window.location.hash;
     let token = null;
-
     if (hash) {
       const params = new URLSearchParams(hash.substring(1));
       token = params.get('access_token');
