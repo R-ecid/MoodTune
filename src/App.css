@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1b1b1b;  /* Dark background */
+    color: #e0e0e0;  /* Light text for contrast */
+    line-height: 1.6;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .App {
+    text-align: center;
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  /* Header Styles */
+  header {
+    width: 100%;
+    padding: 10px 0;
   }
-}
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #ffffff;  /* White text for the header */
+    letter-spacing: 1.5px;
+    font-weight: bold;
+  }
+  
+  /* Layout for Mood Input */
+  .mood-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 80%; /* Mood input container takes up most of the screen width */
+  }
+  
+  .mood-input input {
+    flex-grow: 1; /* Input box takes up the majority of the space */
+    padding: 12px;
+    border: 2px solid #4a69bd;  /* Muted blue border */
+    background-color: #333333;  /* Darker input box */
+    color: #e0e0e0;  /* Light text inside input */
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .mood-input input:focus {
+    border-color: #6ab04c;  /* Muted green on focus */
+  }
+  
+  .mood-input button {
+    padding: 12px 24px;
+    background-color: #6ab04c;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .mood-input button:hover {
+    background-color: #4a69bd;
+    transform: translateY(-3px);
+  }
+  
+  /* Layout for Recommendation Section */
+.recommendation-list {
+    margin-top: 20px;
+    width: 100%;
+    height: calc(85vh - 140px);  /* Adjust height to fit the viewport better */
+    background-color: #292929;  /* Darker background for the recommendations */
+    padding: 0px;  /* Reduced padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  
+  /* Recommendation Item */
+  .recommendation-item {
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  .recommendation-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .recommendation-item p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+  }
+  
