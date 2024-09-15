@@ -49,7 +49,7 @@ const Login = () => {
         transition={{ duration: 1 }}
       >
         <Typography variant="h2" component="h1" sx={{ fontWeight: 'bold' }}>
-          SoundVibes
+          MoodTune
         </Typography>
         <Typography variant="h5" sx={{ mt: 2 }}>
           Discover songs that match your mood

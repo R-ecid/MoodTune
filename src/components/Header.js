@@ -32,7 +32,7 @@ const Header = () => {
             component="div"
             sx={{ fontFamily: 'Poppins, sans-serif', fontWeight: 'bold' }}
           >
-            SoundVibes
+            MoodTune
           </Typography>
           <IconButton
             sx={{ position: 'absolute', right: 0 }}
