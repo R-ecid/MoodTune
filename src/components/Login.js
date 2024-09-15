@@ -27,7 +27,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
 
 const Login = () => {
   const CLIENT_ID = '93ea2cedce834677b52fe6154f991134';
-  const REDIRECT_URI = 'http://localhost:3000/callback';
+  const REDIRECT_URI = 'https://moodtune.netlify.app/callback';
   const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
   const RESPONSE_TYPE = 'token';
 
