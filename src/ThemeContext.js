@@ -42,10 +42,14 @@ const ThemeContextProvider = ({ children }) => {
             : {
                 // Light mode palette
                 primary: {
-                  main: '#6200ee',
+                  main: '#fff',
                 },
                 secondary: {
-                  main: '#03dac6',
+                  main: '#000',
+                },
+                text: {
+                  primary: '#000',
+                  secondary: '#b0b0b0',
                 },
               }),
         },

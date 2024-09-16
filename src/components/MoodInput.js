@@ -1,4 +1,3 @@
-// src/components/MoodInput.js
 import React, { useState } from 'react';
 import { Box, TextField, Button } from '@mui/material';
 import { motion } from 'framer-motion';

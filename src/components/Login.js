@@ -1,10 +1,9 @@
-// src/components/Login.js
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import backgroundImage from '../assets/images/landing-bg.jpg';
 import { motion } from 'framer-motion';
-import MusicNoteIcon from '@mui/icons-material/MusicNote'; // Use a generic music icon
+import MusicNoteIcon from '@mui/icons-material/MusicNote'; 
 
 const HeroContainer = styled(Box)(({ theme }) => ({
   minHeight: '100vh',
@@ -34,7 +33,6 @@ const Login = () => {
   const scopes = [
     'user-read-private',
     'user-read-email',
-    // Add any other scopes you need
   ];
 
   const authUrl = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(

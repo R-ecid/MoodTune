@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ThemeContextProvider from './ThemeContext';
@@ -7,7 +6,7 @@ import Header from './components/Header';
 import Login from './components/Login';
 import Callback from './components/Callback';
 import MainApp from './components/MainApp';
-import backgroundImage from './assets/images/SoundVibesBackground.jpg'; // Import the background image
+import backgroundImage from './assets/images/SoundVibesBackground.jpg';
 
 function App() {
   const [accessToken, setAccessToken] = useState(null);

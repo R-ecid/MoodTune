@@ -1,4 +1,3 @@
-// src/components/MainApp.js
 import React, { useState } from 'react';
 import { Container } from '@mui/material';
 import MoodInput from './MoodInput';
@@ -37,7 +36,6 @@ const mapMoodToGenres = (mood) => {
     stressed: ['ambient', 'sleep', 'study'],
     sleepy: ['sleep', 'ambient', 'new-age'],
     festive: ['party', 'dance', 'holiday'],
-    // Additional mappings can be added here
   };
 
   // Normalize the mood input
@@ -64,7 +62,7 @@ const mapMoodToGenres = (mood) => {
 
       // Fetch recommendations from Spotify
       const response = await fetch(
-        `https://api.spotify.com/v1/recommendations?seed_genres=${seedGenres}&limit=10`,
+        `https://api.spotify.com/v1/recommendations?seed_genres=${seedGenres}&limit=8`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,

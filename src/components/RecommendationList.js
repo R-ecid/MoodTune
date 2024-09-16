@@ -1,4 +1,3 @@
-// src/components/RecommendationList.js
 import React from 'react';
 import {
   List,
