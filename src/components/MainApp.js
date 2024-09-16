@@ -62,7 +62,7 @@ const mapMoodToGenres = (mood) => {
 
       // Fetch recommendations from Spotify
       const response = await fetch(
-        `https://api.spotify.com/v1/recommendations?seed_genres=${seedGenres}&limit=8`,
+        `https://api.spotify.com/v1/recommendations?seed_genres=${seedGenres}&limit=9`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
