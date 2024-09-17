@@ -1,8 +1,9 @@
+// src/App.js
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ThemeContextProvider from './ThemeContext';
 import { CssBaseline, GlobalStyles } from '@mui/material';
-import Header from './components/Header';
+// Removed Header import from here
 import Login from './components/Login';
 import Callback from './components/Callback';
 import MainApp from './components/MainApp';
@@ -69,11 +70,25 @@ function App() {
           },
         }}
       />
-      <Header />
+      {/* Removed Header component from here */}
       <Routes>
         <Route
           path="/"
-          element={accessToken ? <MainApp accessToken={accessToken} /> : <Login />}
+          element={
+            accessToken ? (
+              <MainApp
+                accessToken={accessToken}
+                onLogout={() => {
+                  setAccessToken(null);
+                  setTokenExpiryTime(null);
+                  localStorage.removeItem('accessToken');
+                  localStorage.removeItem('tokenExpiryTime');
+                }}
+              />
+            ) : (
+              <Login />
+            )
+          }
         />
         <Route
           path="/callback"

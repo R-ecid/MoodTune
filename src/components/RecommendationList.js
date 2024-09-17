@@ -1,46 +1,57 @@
+// src/components/RecommendationList.js
 import React from 'react';
 import {
   List,
   ListItem,
-  ListItemText,
   ListItemAvatar,
-  Avatar,
-  Collapse,
+  ListItemText,
   IconButton,
+  Avatar,
+  Box,
 } from '@mui/material';
-import { PlayArrow, ExpandLess, ExpandMore } from '@mui/icons-material';
+import { PlayArrow } from '@mui/icons-material';
+import { motion } from 'framer-motion';
 
 const RecommendationList = ({ recommendations }) => {
-  const [openIndex, setOpenIndex] = React.useState(null);
-
-  const handleClick = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
-    <List>
-      {recommendations.map((song, index) => (
-        <React.Fragment key={song.id}>
-          <ListItem button onClick={() => handleClick(index)}>
+    <Box
+      component={motion.div}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      // Remove or adjust margins if necessary
+      sx={{
+        mt: 1,
+        // Optionally adjust the width here as well
+        // width: '100%',
+      }}
+    >
+      <List>
+        {recommendations.map((song) => (
+          <ListItem key={song.id}>
             <ListItemAvatar>
-              <Avatar src={song.albumArt} alt={song.title} />
+              <Avatar src={song.albumArt} alt={song.title} variant="square" />
             </ListItemAvatar>
             <ListItemText primary={song.title} secondary={song.artist} />
-            {openIndex === index ? <ExpandLess /> : <ExpandMore />}
-          </ListItem>
-          <Collapse in={openIndex === index} timeout="auto" unmountOnExit>
-            {song.previewUrl && (
+            {song.previewUrl ? (
               <IconButton
                 color="primary"
                 onClick={() => window.open(song.previewUrl, '_blank')}
+                component={motion.div}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <PlayArrow />
               </IconButton>
+            ) : (
+              <IconButton color="primary" disabled>
+                <PlayArrow />
+              </IconButton>
             )}
-          </Collapse>
-        </React.Fragment>
-      ))}
-    </List>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
   );
 };
 
